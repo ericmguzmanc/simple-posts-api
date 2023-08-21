@@ -1,18 +1,18 @@
-import express from 'express'
-import { showPostsRouter } from './routes/show';
-import { indexPostsRouter } from './routes';
+import express from 'express';
+import { PostsRouter } from './routes/post';
+import { UsersRouter } from './routes/user';
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
-app.use(showPostsRouter)
-app.use(indexPostsRouter)
+app.use('/posts', PostsRouter);
+app.use('/users', UsersRouter);
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 app.all('*', async (req, res) => {
   res.status(404);
-  res.send("Not Found")
-})
+  res.send('Not Found');
+});
 
-export { app }
+export { app };
