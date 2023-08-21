@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "prisma generate && prisma migrate deploy && node ./build/index.js",
+    "start": "node ./build/index.js",
     "start:dev": "ts-node-dev ./src/index.ts --exit-child",
-    "build": "npm install && tsc",
+    "build": "npm install && prisma generate && prisma migrate deploy &&  && tsc",
     "migrate": "prisma migrate dev"
   },
   "keywords": [],
