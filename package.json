@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./build/index.js",
     "start:dev": "ts-node-dev ./src/index.ts --exit-child",
-    "build": "npm install && prisma migrate reset && prisma generate && prisma migrate deploy && tsc",
+    "build": "npm install && prisma generate && prisma migrate deploy && prisma db push && tsc",
     "migrate": "prisma migrate dev"
   },
   "keywords": [],
